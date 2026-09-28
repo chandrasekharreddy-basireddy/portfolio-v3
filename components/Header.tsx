@@ -77,7 +77,7 @@ export function Header() {
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ""}`}>
       <div className={`shell ${styles.inner}`}>
         <Link href="/" className={styles.wordmark} aria-label="Home">
-          {site.name}
+          {site.headerName}
         </Link>
 
         <nav className={styles.nav} aria-label="Primary">
@@ -88,6 +88,7 @@ export function Header() {
               className={`${styles.navLink} ${
                 active === section ? styles.navLinkActive : ""
               }`}
+              aria-current={active === section ? "true" : undefined}
             >
               <span className={styles.navIndex}>
                 0{sections.indexOf(section) + 1}
