@@ -1,0 +1,322 @@
+/* ---------- hero ---------- */
+
+.hero {
+  min-height: 92svh;
+  display: flex;
+  align-items: flex-end;
+  padding-top: 7.5rem;
+  padding-bottom: clamp(3rem, 6vw, 5rem);
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 3.5rem;
+  align-items: end;
+  width: 100%;
+}
+
+@media (min-width: 1000px) {
+  .heroGrid {
+    grid-template-columns: minmax(0, 7fr) minmax(0, 4fr);
+    gap: 4rem 5rem;
+  }
+}
+
+.heroMeta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.heroMetaLine {
+  width: 2.5rem;
+  height: 1px;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+
+.heroTitle {
+  font-size: clamp(2.5rem, 5.2vw, 4rem);
+  font-weight: 500;
+  line-height: 1.06;
+  letter-spacing: -0.028em;
+  max-width: 16ch;
+}
+
+.heroTitleAccent {
+  color: var(--accent);
+}
+
+.heroIntro {
+  margin-top: 1.5rem;
+  max-width: 52ch;
+  color: var(--ink-soft);
+  font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+  line-height: 1.65;
+}
+
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 2rem;
+}
+
+.heroAside {
+  display: none;
+}
+
+@media (min-width: 1000px) {
+  .heroAside {
+    display: block;
+  }
+}
+
+.heroAsideLabel {
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.heroScroll {
+  margin-top: 4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: var(--ink-faint);
+}
+
+.heroScrollLine {
+  width: 1px;
+  height: 2.2rem;
+  background: linear-gradient(var(--line-strong), transparent);
+}
+
+/* ---------- about ---------- */
+
+.aboutRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 2.5rem;
+  margin-top: 2.75rem;
+  align-items: start;
+}
+
+@media (min-width: 760px) {
+  .aboutRow {
+    grid-template-columns: 132px minmax(0, 1fr);
+    gap: 3rem;
+  }
+}
+
+.aboutPhoto {
+  width: 132px;
+  height: 132px;
+  object-fit: cover;
+  border-radius: var(--r-frame);
+  border: 1px solid var(--line-strong);
+  filter: saturate(0.92);
+}
+
+.aboutFacts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 3.5rem;
+}
+
+.aboutFact dt {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 0.35rem;
+}
+
+.aboutFact dd {
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* ---------- principles ---------- */
+
+.principles {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0;
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 760px) {
+  .principles {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 4rem;
+  }
+}
+
+.principle {
+  border-top: 1px solid var(--line);
+  padding: 1.6rem 0 1.9rem;
+}
+
+.principleNumber {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+}
+
+.principleTitle {
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.principleBody {
+  margin-top: 0.45rem;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  max-width: 44ch;
+}
+
+/* ---------- engineering ---------- */
+
+.skills {
+  margin-top: 1.5rem;
+}
+
+.skillGroup {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.6rem 3rem;
+  border-top: 1px solid var(--line);
+  padding: 1.3rem 0 1.5rem;
+}
+
+@media (min-width: 700px) {
+  .skillGroup {
+    grid-template-columns: 200px minmax(0, 1fr);
+  }
+}
+
+.skillGroupLabel {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  padding-top: 0.25rem;
+}
+
+.skillList {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 0.1rem;
+  font-size: 1.05rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.skillList li {
+  display: flex;
+  align-items: baseline;
+  white-space: nowrap;
+}
+
+.skillList li + li::before {
+  content: "·";
+  margin-inline: 0.75rem;
+  color: var(--ink-faint);
+  font-weight: 400;
+}
+
+/* ---------- journey ---------- */
+
+.timeline {
+  margin-top: 1.5rem;
+}
+
+.timelineEntry {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.35rem 3rem;
+  border-top: 1px solid var(--line);
+  padding: 1.45rem 0 1.6rem;
+}
+
+@media (min-width: 700px) {
+  .timelineEntry {
+    grid-template-columns: 200px minmax(0, 1fr);
+  }
+}
+
+.timelinePeriod {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: var(--ink-soft);
+  padding-top: 0.3rem;
+}
+
+.timelineEntry--project .timelinePeriod {
+  color: var(--accent);
+}
+
+.timelineTitle {
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.timelinePlace {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  margin-top: 0.1rem;
+}
+
+.timelineDetail {
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  margin-top: 0.45rem;
+  max-width: 60ch;
+}
+
+/* ---------- contact ---------- */
+
+.contact {
+  padding-bottom: clamp(6rem, 10vw, 9rem);
+}
+
+.contactHeading {
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+}
+
+.contactEmail {
+  display: inline-block;
+  margin-top: 1.4rem;
+  font-family: var(--font-mono);
+  font-size: clamp(1rem, 2.6vw, 1.45rem);
+  color: var(--ink);
+  border-bottom: 1.5px solid var(--line-strong);
+  transition: color var(--t-micro) var(--ease), border-color var(--t-micro) var(--ease);
+  word-break: break-all;
+}
+
+.contactEmail:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.contactLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2.2rem;
+  margin-top: 2rem;
+  font-size: 0.95rem;
+}
