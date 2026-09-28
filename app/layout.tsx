@@ -16,11 +16,11 @@ export const metadata: Metadata = {
     template: "%s — Chandra Sekhar Reddy Basireddy",
   },
   description:
-    "Computer Science student at Sai University. I build software to understand how systems really work — a learning platform, a security-first messaging app and a walkable 3D world.",
+    "Computer science student at Sai University. I build apps to learn: an assessment platform, a messaging app, and a small 3D world.",
   openGraph: {
     title: "Chandra Sekhar Reddy Basireddy",
     description:
-      "Computer Science student at Sai University. I build software to understand how systems really work.",
+      "Computer science student at Sai University. I build apps to learn.",
     url: "/",
     siteName: "Chandra Sekhar Reddy Basireddy",
     type: "website",

@@ -1,6 +1,6 @@
 .footer {
   border-top: 1px solid var(--line);
-  background: rgba(239, 237, 230, 0.5);
+  background: rgba(235, 227, 216, 0.78);
 }
 
 .contact {
@@ -26,10 +26,10 @@
 
 .statement {
   margin-top: 1.4rem;
-  font-size: clamp(1.6rem, 3.2vw, 2.3rem);
+  font-size: clamp(1.7rem, 3.2vw, 2.8rem);
   font-weight: 500;
   letter-spacing: -0.02em;
-  line-height: 1.2;
+  line-height: 1.15;
   max-width: 24ch;
 }
 
@@ -45,9 +45,6 @@
 
 .email:hover {
   transform: translateY(-1px);
-}
-
-.email:hover {
   color: var(--accent);
   border-color: var(--accent);
 }

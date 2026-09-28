@@ -1,0 +1,149 @@
+.sheet {
+  position: relative;
+  min-height: 330px;
+  padding: 1rem clamp(1rem, 2.5vw, 1.6rem) 1.1rem;
+  overflow: hidden;
+  color: var(--ink);
+  background:
+    linear-gradient(90deg, transparent 0 2.65rem, rgba(169, 84, 35, 0.18) 2.65rem 2.7rem, transparent 2.7rem),
+    repeating-linear-gradient(180deg, transparent 0 27px, rgba(69, 105, 128, 0.11) 27px 28px),
+    #faf7f0;
+  border: 1px solid #d7ccbc;
+  border-radius: 3px 8px 4px 6px;
+  box-shadow: 2px 4px 0 rgba(103, 82, 56, 0.08), 0 18px 34px rgba(29, 26, 23, 0.07);
+  transform: rotate(-0.15deg);
+  transition: transform var(--t-component) var(--ease), box-shadow var(--t-component) var(--ease);
+}
+
+.sheet::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 2.05rem;
+  width: 0.65rem;
+  content: "";
+  background: radial-gradient(circle, var(--paper) 0 3px, transparent 3.5px) center 14px / 100% 28px repeat-y;
+}
+
+.sheet:hover {
+  transform: rotate(0.2deg) translateY(-2px);
+  box-shadow: 2px 6px 0 rgba(103, 82, 56, 0.08), 0 23px 38px rgba(29, 26, 23, 0.1);
+}
+
+.caption {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-left: 2rem;
+  color: #72685d;
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.caption span:last-child {
+  overflow: hidden;
+  text-align: right;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.drawing {
+  position: relative;
+  z-index: 1;
+  margin: 0.65rem 0 0 1.8rem;
+}
+
+.drawing svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.pencil,
+.pencilLight,
+.box,
+.arrow,
+.arrowHead,
+.noteLine,
+.horizon,
+.path,
+.pathSecond,
+.tree,
+.treeLight,
+.building {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.pencil,
+.box,
+.arrow,
+.arrowHead {
+  stroke: #383630;
+  stroke-width: 2;
+}
+
+.pencilLight,
+.noteLine,
+.treeLight {
+  stroke: #8c7967;
+  stroke-width: 1.5;
+}
+
+.box {
+  fill: rgba(255, 253, 249, 0.32);
+}
+
+.arrow,
+.arrowHead {
+  stroke-width: 1.8;
+}
+
+.label,
+.small,
+.note {
+  fill: #383630;
+  font-family: "Instrument Sans", system-ui, sans-serif;
+}
+
+.label {
+  font-size: 14px;
+}
+
+.small {
+  fill: #716354;
+  font-size: 12px;
+}
+
+.note {
+  fill: #8a4b2b;
+  font-family: "Instrument Sans", system-ui, sans-serif;
+  font-size: 14px;
+  font-style: italic;
+}
+
+@media (max-width: 520px) {
+  .sheet {
+    min-height: 265px;
+  }
+
+  .caption {
+    font-size: 0.58rem;
+  }
+
+  .drawing {
+    margin-top: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sheet {
+    transform: none;
+  }
+}

@@ -1,42 +1,39 @@
 /* ============================================================
-   Design tokens — one system, every component reads from here.
+   Design tokens — warm editorial portfolio system.
 
    Type          Instrument Sans (text), IBM Plex Mono (metadata)
-   Color         warm paper, near-black ink, one burnt-sienna accent
-   Radius        2px base, 6px for image frames only
-   Motion        160ms micro / 280ms component / 560ms entrance
+   Color         paper, stone, ink, warm ember accent
+   Radius        organic rounded corners with a hand-built feel
+   Motion        grounded, natural transitions
    ============================================================ */
 
 :root {
-  /* color */
-  --paper: #f7f6f2;
-  --paper-deep: #efede6;
-  --surface: #ffffff;
-  --ink: #191713;
-  --ink-soft: #67625a;
-  --ink-faint: #a29c91;
-  --line: #e2ded4;
-  --line-strong: #cdc6b8;
-  --accent: #a8490e;
-  --accent-deep: #83380a;
-  --accent-wash: #f3e2d4;
+  --paper: #f5f1ea;
+  --paper-deep: #ebe3d8;
+  --paper-strong: #e4dbcf;
+  --surface: #fffdf9;
+  --ink: #1d1a17;
+  --ink-soft: #5f564d;
+  --ink-faint: #8d857b;
+  --line: #d9cfc1;
+  --line-strong: #c4b7a6;
+  --accent: #a95423;
+  --accent-deep: #7e3c18;
+  --accent-wash: #f3e0d2;
+  --success: #3e6b4d;
+  --shadow: rgba(29, 26, 23, 0.08);
 
-  /* type */
   --font-sans: "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", monospace;
 
-  /* radius */
-  --r-base: 2px;
-  --r-frame: 6px;
+  --r-base: 18px;
+  --r-frame: 20px;
 
-  /* motion */
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --t-micro: 160ms;
   --t-component: 280ms;
   --t-entrance: 560ms;
 }
-
-/* ---------- base ---------- */
 
 *,
 *::before,
@@ -54,7 +51,8 @@ html {
 
 body {
   background:
-    radial-gradient(circle at top, rgba(168, 73, 14, 0.06), transparent 30%),
+    radial-gradient(circle at top, rgba(169, 84, 35, 0.08), transparent 28%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.25), transparent 30%),
     var(--paper);
   color: var(--ink);
   font-family: var(--font-sans);
@@ -63,6 +61,18 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   color-scheme: light;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.12)),
+    radial-gradient(rgba(29, 26, 23, 0.025) 0.6px, transparent 0.6px);
+  background-size: auto, 8px 8px;
+  opacity: 0.65;
 }
 
 section[id],
@@ -116,12 +126,12 @@ button {
   left: 1rem;
   top: -4rem;
   z-index: 100;
-  padding: 0.6rem 1rem;
+  padding: 0.7rem 1rem;
   background: var(--ink);
   color: var(--paper);
   font-family: var(--font-mono);
   font-size: 0.8rem;
-  border-radius: var(--r-base);
+  border-radius: 999px;
   transition: top var(--t-micro) var(--ease);
 }
 
@@ -133,21 +143,19 @@ button {
   font-variant-numeric: tabular-nums;
 }
 
-/* ---------- shared layout primitives ---------- */
-
 .shell {
   max-width: 1280px;
   margin-inline: auto;
-  padding-inline: clamp(1.25rem, 5vw, 4rem);
+  padding-inline: clamp(1.25rem, 4vw, 4rem);
 }
 
 .section {
-  padding-block: clamp(4.25rem, 9vw, 8.5rem);
+  padding-block: clamp(4rem, 8vw, 8rem);
 }
 
 @media (min-width: 760px) {
   .section {
-    padding-block: clamp(5.5rem, 9vw, 8.5rem);
+    padding-block: clamp(5rem, 8vw, 8.5rem);
   }
 }
 
@@ -156,13 +164,11 @@ button {
 }
 
 .section--deep {
-  background: var(--paper-deep);
+  background: rgba(255, 255, 255, 0.26);
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
 
-/* a labelled two-part section heading used across pages:
-   left rail (mono label + index) / right content area */
 .lede-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
@@ -191,11 +197,11 @@ button {
 }
 
 .lede-title {
-  font-size: clamp(1.7rem, 3.2vw, 2.35rem);
+  font-size: clamp(1.9rem, 3.3vw, 2.7rem);
   font-weight: 500;
-  letter-spacing: -0.02em;
-  line-height: 1.15;
-  max-width: 22ch;
+  letter-spacing: -0.035em;
+  line-height: 1.08;
+  max-width: 20ch;
 }
 
 .lede-body {
@@ -207,8 +213,6 @@ button {
   color: var(--ink);
   font-weight: 600;
 }
-
-/* ---------- typography helpers ---------- */
 
 .meta {
   font-family: var(--font-mono);
@@ -222,8 +226,6 @@ button {
 .meta--accent {
   color: var(--accent);
 }
-
-/* ---------- links ---------- */
 
 .link {
   position: relative;
@@ -253,8 +255,6 @@ button {
   color: var(--accent);
 }
 
-/* ---------- buttons ---------- */
-
 .button {
   display: inline-flex;
   align-items: center;
@@ -264,7 +264,7 @@ button {
   font-weight: 600;
   letter-spacing: 0.01em;
   border: 1px solid var(--ink);
-  border-radius: var(--r-base);
+  border-radius: 999px;
   box-shadow: 0 0 0 rgba(25, 23, 19, 0);
   transition: background var(--t-micro) var(--ease),
     color var(--t-micro) var(--ease), transform var(--t-micro) var(--ease),
@@ -298,8 +298,6 @@ button {
 .button:hover .button-arrow {
   transform: translateX(3px);
 }
-
-/* ---------- reveal ---------- */
 
 .reveal {
   opacity: 0;

@@ -3,17 +3,19 @@
   grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
   gap: clamp(2rem, 5vw, 4.5rem);
   align-items: center;
-  padding: clamp(2.1rem, 4vw, 3rem);
+  padding: clamp(2rem, 4vw, 3rem);
   border: 1px solid transparent;
   border-top: 1px solid var(--line);
   border-radius: 0;
   transition: border-color var(--t-component) var(--ease),
-    box-shadow var(--t-component) var(--ease), transform var(--t-component) var(--ease);
+    box-shadow var(--t-component) var(--ease), transform var(--t-component) var(--ease),
+    background var(--t-component) var(--ease);
 }
 
 .preview:hover {
   border-color: var(--line-strong);
-  box-shadow: 0 16px 40px rgba(25, 23, 19, 0.04);
+  background: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 18px 42px rgba(29, 26, 23, 0.06);
 }
 
 .preview:first-child {
@@ -29,27 +31,12 @@
   transform: translateY(-2px);
 }
 
-.visualCol :global(.frame) {
-  transition: box-shadow var(--t-component) var(--ease),
-    border-color var(--t-component) var(--ease), transform var(--t-component) var(--ease);
-}
-
-.preview:hover .visualCol :global(.frame) {
-  border-color: var(--ink-faint);
-  box-shadow: 0 1px 2px rgba(25, 23, 19, 0.05),
-    0 16px 40px rgba(25, 23, 19, 0.09);
-}
-
 .flipped .visualCol {
   order: 2;
 }
 
 .flipped .textCol {
   order: 1;
-}
-
-.worldFigure {
-  margin: 0;
 }
 
 .index {
@@ -73,11 +60,38 @@
   color: var(--ink-faint);
 }
 
+.projectStatus {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-left: auto;
+  color: var(--ink-soft);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.04em;
+}
+
+.projectStatus::before {
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background: var(--success);
+  content: "";
+}
+
+.projectStatus[data-status="In development"]::before {
+  background: var(--accent);
+}
+
+.projectStatus[data-status="Source available"]::before {
+  background: var(--ink-faint);
+}
+
 .name {
-  font-size: clamp(1.6rem, 2.8vw, 2.1rem);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
   font-weight: 500;
-  letter-spacing: -0.02em;
-  line-height: 1.12;
+  letter-spacing: -0.03em;
+  line-height: 1.08;
 }
 
 .nameLink {
@@ -98,8 +112,8 @@
 }
 
 .tagline {
-  margin-top: 0.4rem;
-  font-size: 1.02rem;
+  margin-top: 0.5rem;
+  font-size: 1.06rem;
   font-weight: 600;
   color: var(--ink);
 }

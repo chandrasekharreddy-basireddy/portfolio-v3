@@ -41,7 +41,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
       {/* ---------- project header ---------- */}
         <section className={`shell ${styles.header}`}>
           <Link href="/#work" className={styles.backLink}>
-            ← All work
+            ← Back to projects
           </Link>
 
           <Reveal>
@@ -97,7 +97,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
         <section className={`shell section ${styles.overview}`}>
           <Reveal>
             <p className="lede-label">
-              <em>{project.index}</em>Overview
+              <em>{project.index}</em>What it is
             </p>
           </Reveal>
           <Reveal delay={60}>
@@ -109,13 +109,13 @@ export default function ProjectPage({ params }: ProjectPageProps) {
         <section className={`shell section ${styles.duoGrid}`}>
           <Reveal>
             <div>
-              <h2 className={styles.subHeading}>Problem</h2>
+              <h2 className={styles.subHeading}>Why I made it</h2>
               <p className={styles.subBody}>{project.problem}</p>
             </div>
           </Reveal>
           <Reveal delay={80}>
             <div>
-              <h2 className={styles.subHeading}>Approach</h2>
+              <h2 className={styles.subHeading}>How I built it</h2>
               <p className={styles.subBody}>{project.approach}</p>
             </div>
           </Reveal>
@@ -125,7 +125,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
         <section className={`shell section ${styles.implementation}`}>
           <Reveal>
             <p className="lede-label">
-              <em>{project.index}</em>Implementation
+              <em>{project.index}</em>Under the hood
             </p>
           </Reveal>
           <div className={styles.implementationList}>
@@ -144,7 +144,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
         <section className={`shell section ${styles.decisions}`}>
           <Reveal>
             <p className="lede-label">
-              <em>{project.index}</em>Engineering decisions
+              <em>{project.index}</em>Choices I made
             </p>
           </Reveal>
           <div className={styles.decisionsGrid}>
@@ -163,7 +163,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
         <section className={`shell section ${styles.duoGrid}`}>
           <Reveal>
             <div>
-              <h2 className={styles.subHeading}>What broke</h2>
+              <h2 className={styles.subHeading}>Where I got stuck</h2>
               <div className={styles.challengeList}>
                 {project.whatBroke.map((challenge) => (
                   <div key={challenge.heading} className={styles.challenge}>

@@ -1,32 +1,7 @@
 import Link from "next/link";
 import type { Project } from "@/content/projects";
-import { BrowserFrame } from "./BrowserFrame";
-import { SurvivalSchoolVisual } from "./visuals/SurvivalSchoolVisual";
-import { SignalLiteVisual } from "./visuals/SignalLiteVisual";
-import { WorldVisual } from "./visuals/WorldVisual";
+import { ProjectSketch } from "./visuals/ProjectSketch";
 import styles from "./ProjectPreview.module.css";
-
-function ProjectVisual({ slug }: { slug: string }) {
-  if (slug === "survival-school") {
-    return (
-      <BrowserFrame url="survivalschool.vercel.app/exam/physics-unit-3">
-        <SurvivalSchoolVisual />
-      </BrowserFrame>
-    );
-  }
-  if (slug === "signal-lite") {
-    return (
-      <BrowserFrame url="localhost:3000/#systems-study">
-        <SignalLiteVisual />
-      </BrowserFrame>
-    );
-  }
-  return (
-    <figure className={styles.worldFigure} aria-hidden="true">
-      <WorldVisual />
-    </figure>
-  );
-}
 
 type ProjectPreviewProps = {
   project: Project;
@@ -37,7 +12,7 @@ export function ProjectPreview({ project, flip }: ProjectPreviewProps) {
   return (
     <article className={`${styles.preview} ${flip ? styles.flipped : ""}`}>
       <div className={`reveal ${styles.visualCol}`}>
-        <ProjectVisual slug={project.slug} />
+        <ProjectSketch slug={project.slug} name={project.name} />
       </div>
 
       <div className={styles.textCol}>
@@ -45,6 +20,9 @@ export function ProjectPreview({ project, flip }: ProjectPreviewProps) {
           <p className={styles.index}>
             <span className={styles.indexNumber}>{project.index}</span>
             <span className={styles.indexMeta}>{project.year}</span>
+            <span className={styles.projectStatus} data-status={project.status}>
+              {project.status}
+            </span>
           </p>
         </div>
 
@@ -79,7 +57,7 @@ export function ProjectPreview({ project, flip }: ProjectPreviewProps) {
               href={`/projects/${project.slug}`}
               className="link"
             >
-              Read the case study
+              More about this project
             </Link>
             {project.links
               .filter((l) => l.kind === "live")

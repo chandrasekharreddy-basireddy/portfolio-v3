@@ -6,10 +6,10 @@ import { usePathname } from "next/navigation";
 import { site } from "@/content/site";
 import styles from "./header.module.css";
 
-const sections = ["work", "principles", "skills", "timeline"] as const;
+const sections = ["work", "about", "skills", "timeline"] as const;
 const sectionLabels: Record<(typeof sections)[number], string> = {
   work: "Work",
-  principles: "Principles",
+  about: "About",
   skills: "Skills",
   timeline: "Timeline",
 };
@@ -99,8 +99,7 @@ export function Header() {
         </nav>
 
         <a href={`mailto:${site.email}`} className={styles.status}>
-          <span className={styles.statusDot} aria-hidden="true" />
-          Building systems
+          Email me
         </a>
 
         <button

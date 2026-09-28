@@ -4,9 +4,9 @@
   left: 0;
   right: 0;
   z-index: 100;
-  background: rgba(247, 246, 242, 0.82);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: rgba(245, 241, 234, 0.78);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid transparent;
   transition: border-color var(--t-component) var(--ease),
     background var(--t-component) var(--ease), box-shadow var(--t-component) var(--ease);
@@ -14,7 +14,7 @@
 
 .header.scrolled {
   border-bottom-color: var(--line);
-  box-shadow: 0 8px 24px rgba(25, 23, 19, 0.04);
+  box-shadow: 0 14px 30px rgba(29, 26, 23, 0.05);
 }
 
 .inner {
@@ -22,18 +22,18 @@
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
-  height: 72px;
+  height: 78px;
   transition: height var(--t-component) var(--ease);
 }
 
 .header.scrolled .inner {
-  height: 60px;
+  height: 66px;
 }
 
 .wordmark {
-  font-size: 0.92rem;
-  font-weight: 600;
-  letter-spacing: 0.01em;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
   white-space: nowrap;
 }
 
@@ -52,7 +52,7 @@
 .navLink {
   display: inline-flex;
   align-items: baseline;
-  gap: 0.45rem;
+  gap: 0.55rem;
   font-size: 0.92rem;
   font-weight: 500;
   color: var(--ink-soft);
@@ -84,11 +84,8 @@
   display: none;
   align-items: center;
   gap: 0.55rem;
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: 0.92rem;
   font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
   color: var(--ink-soft);
   white-space: nowrap;
   transition: color var(--t-micro) var(--ease), transform var(--t-micro) var(--ease);
@@ -108,15 +105,6 @@
   }
 }
 
-.statusDot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #2e7d43;
-}
-
-/* ---------- mobile navigation ---------- */
-
 .burger {
   display: inline-flex;
   flex-direction: column;
@@ -126,6 +114,12 @@
   height: 44px;
   margin-right: -0.75rem;
   align-items: center;
+  border-radius: 999px;
+  transition: background var(--t-micro) var(--ease);
+}
+
+.burger:hover {
+  background: rgba(29, 26, 23, 0.04);
 }
 
 @media (min-width: 860px) {
@@ -157,7 +151,7 @@
   flex-direction: column;
   justify-content: center;
   padding: 0 clamp(1.25rem, 7vw, 3rem);
-  background: var(--paper);
+  background: rgba(245, 241, 234, 0.96);
   opacity: 0;
   visibility: hidden;
   transition: opacity var(--t-component) var(--ease),

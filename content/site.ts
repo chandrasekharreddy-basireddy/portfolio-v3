@@ -10,11 +10,10 @@ export const site = {
   siteUrl: "https://chandrasekharreddy-basireddy.github.io/portfolio-v3",
   location: "India",
   availability: "Learning by building",
-  heroLine: "I learn by building systems with real constraints.",
+  heroLine: "I'm Chandra. I study computer science and build things outside class.",
   heroSub:
-    "I’m a second-year Computer Science student at Sai University, building software where architecture, tradeoffs, and product behavior matter as much as the visual polish.",
-  buildNote:
-    "Built with Next.js, TypeScript, and hand-written CSS. Deployed on GitHub Pages.",
+    "I’m in my second year at Sai University. This site is where I keep the projects I’ve made so far, including a few that are still unfinished.",
+  buildNote: "Thanks for taking a look.",
 } as const;
 
 export type Site = typeof site;

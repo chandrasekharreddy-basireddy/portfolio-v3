@@ -8,32 +8,10 @@ export type JourneyEntry = {
 
 export const journey: JourneyEntry[] = [
   {
-    period: "2024 — Present",
-    title: "B.Tech Computer Science",
-    place: "Sai University",
-    detail: "Focused on systems, data structures, backend engineering, and product-minded web development. CGPA: 9.33.",
+    period: "Class X",
+    title: "Bhashyam High School",
+    place: "560 / 600",
     kind: "education",
-  },
-  {
-    period: "2026",
-    title: "Chandra's World",
-    place: "Three.js · Interactive frontend",
-    detail: "Built a walkable 3D portfolio world to understand scene composition, animation, frame-budgeting, and real-time browser performance.",
-    kind: "project",
-  },
-  {
-    period: "2026",
-    title: "Signal-Lite",
-    place: "FastAPI · PostgreSQL · Redis · Next.js",
-    detail: "Designed a security-first messaging platform around auth, refresh-token rotation, authorization, and reliable realtime delivery.",
-    kind: "project",
-  },
-  {
-    period: "2025 — 2026",
-    title: "Survival School",
-    place: "FastAPI · PostgreSQL · Redis · Next.js",
-    detail: "Built a learning and assessment platform modeled on real course workflows, with a strong focus on scoring integrity and deployment reality.",
-    kind: "project",
   },
   {
     period: "Class XII",
@@ -42,9 +20,38 @@ export const journey: JourneyEntry[] = [
     kind: "education",
   },
   {
-    period: "Class X",
-    title: "Bhashyam High School",
-    place: "560 / 600",
+    period: "2024 — Present",
+    title: "B.Tech Computer Science",
+    place: "Sai University",
+    detail: "B.Tech Computer Science student. CGPA: 9.33.",
     kind: "education",
+  },
+  {
+    period: "2025 — 2026",
+    title: "Survival School",
+    place: "FastAPI · PostgreSQL · Redis · Next.js",
+    detail: "An assessment platform with timed exams, server-side scoring, progress tracking, and QR-checkable certificates.",
+    kind: "project",
+  },
+  {
+    period: "2026",
+    title: "Signal-Lite",
+    place: "FastAPI · PostgreSQL · Redis · Next.js",
+    detail: "A chat app project focused on login, token rotation, permissions, and WebSocket delivery.",
+    kind: "project",
+  },
+  {
+    period: "2026",
+    title: "SaiU V2",
+    place: "JavaScript · Offline-first PWA",
+    detail: "A timetable and planner for students, with offline support and calendar export.",
+    kind: "project",
+  },
+  {
+    period: "2026",
+    title: "Chandra's World",
+    place: "Three.js · Interactive portfolio",
+    detail: "A small 3D world I made to try real-time graphics in the browser. It has a guided tour, free walk, and a plain fallback page.",
+    kind: "project",
   },
 ];

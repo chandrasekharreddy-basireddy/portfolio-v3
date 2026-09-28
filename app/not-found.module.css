@@ -6,45 +6,34 @@
 }
 
 .box {
-  max-width: 46ch;
+  max-width: 52ch;
 }
 
 .title {
-  font-size: clamp(2rem, 5vw, 3rem);
+  font-size: clamp(2.3rem, 5.5vw, 4.2rem);
   font-weight: 500;
-  letter-spacing: -0.02em;
-  line-height: 1.1;
-  margin-top: 1rem;
+  letter-spacing: -0.045em;
+  line-height: 1;
+  margin-top: 1.2rem;
 }
 
 .body {
   color: var(--ink-soft);
-  margin-top: 1rem;
+  margin-top: 1.25rem;
+  max-width: 45ch;
 }
 
-.back {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
+.body a {
+  color: var(--ink);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
   margin-top: 2rem;
-  padding: 0.85rem 1.5rem;
-  font-size: 0.95rem;
-  font-weight: 600;
-  border: 1px solid var(--ink);
-  border-radius: var(--r-base);
-  transition: background var(--t-micro) var(--ease),
-    color var(--t-micro) var(--ease);
 }
 
-.back:hover {
-  background: var(--ink);
-  color: var(--paper);
-}
-
-.backArrow {
-  transition: transform var(--t-component) var(--ease);
-}
-
-.back:hover .backArrow {
-  transform: translateX(-3px);
+.action {
+  gap: 0.65rem;
 }

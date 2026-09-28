@@ -14,7 +14,7 @@ export function Footer() {
         </Reveal>
         <Reveal delay={60}>
           <p className={styles.statement}>
-            The fastest way to reach me is email. I read everything.
+            If something here catches your eye, email me.
           </p>
         </Reveal>
         <Reveal delay={120}>

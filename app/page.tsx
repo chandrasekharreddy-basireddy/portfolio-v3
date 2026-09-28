@@ -6,47 +6,14 @@ import { skillGroups } from "@/content/skills";
 import { journey } from "@/content/journey";
 import styles from "./home.module.css";
 
-const principles = [
-  {
-    title: "Build to understand",
-    body: "I learn by making systems real. The value is not in the idea alone, but in the decisions that survive runtime, scale, and actual user behavior.",
-  },
-  {
-    title: "Question the abstraction",
-    body: "Libraries and frameworks are useful only when I understand what they hide. I want the system underneath to be legible, not mysterious.",
-  },
-  {
-    title: "Keep the interface honest",
-    body: "A good interface should be clear and predictable. If the state model is confusing, the product will fail before the user gets to the real problem.",
-  },
-  {
-    title: "Iterate on what breaks",
-    body: "I care about failure modes, edge cases, and revision. The best systems are not the ones that never break — they are the ones that teach you how to fix them well.",
-  },
-];
-
-const facts = [
-  { label: "Studying", value: "B.Tech Computer Science, Sai University" },
-  { label: "Focus", value: "Backend systems · product thinking · interfaces" },
-  { label: "Based in", value: "India" },
-  { label: "Interested in", value: "System design · reliability · thoughtful UX" },
-];
-
-const focusAreas = [
-  "backend systems and data flow",
-  "real-time product behavior",
-  "thoughtful interfaces and product tradeoffs",
-];
-
 export default function HomePage() {
   return (
     <main id="main">
-      {/* ---------- 01 hero ---------- */}
       <section className={`shell ${styles.hero}`}>
         <div className="reveal">
           <p className="meta">
             <span className={styles.heroMetaLine} aria-hidden="true" />
-            Computer Science · Sai University · India
+            Sai University · India
           </p>
         </div>
 
@@ -56,86 +23,63 @@ export default function HomePage() {
 
         <div className="reveal" style={{ transitionDelay: "160ms" }}>
           <p className={styles.heroSub}>{site.heroSub}</p>
-          <p className={styles.leadSentence}>
-            I care about software that stays honest under pressure: clear interfaces, reliable systems, and decisions that still feel right after the demo is over.
-          </p>
         </div>
 
         <div className="reveal" style={{ transitionDelay: "220ms" }}>
-          <dl className={styles.facts}>
-            {facts.map((fact) => (
-              <div key={fact.label} className={styles.fact}>
-                <dt>{fact.label}</dt>
-                <dd>{fact.value}</dd>
-              </div>
-            ))}
-          </dl>
-        </div>
-
-        <div className="reveal" style={{ transitionDelay: "280ms" }}>
-          <div className={styles.focusWrap}>
-            <p className={styles.focusLabel}>Current focus</p>
-            <ul className={styles.focusList}>
-              {focusAreas.map((area) => (
-                <li key={area} className={styles.focusItem}>{area}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
-
-        <div className="reveal" style={{ transitionDelay: "340ms" }}>
           <div className={styles.heroActions}>
             <a href="#work" className="button button--primary">
-              View selected work
+              Browse projects
               <span className="button-arrow" aria-hidden="true">→</span>
             </a>
             <a href={`mailto:${site.email}`} className="button">
-              Get in touch
+              Email me
             </a>
           </div>
         </div>
       </section>
 
-      {/* ---------- 02 selected work ---------- */}
       <SectionHeading
         id="work"
         index="01"
-        label="Selected work"
-        title="Three projects, three real questions"
-        body="Each project started from a practical problem: how exam systems stay fair, how chat apps stay secure under pressure, and how real-time interfaces keep performance honest."
+        label="Projects"
+        title="Things I’ve been working on"
+        body="A few diagrams explain what each project does. Open one for the details and source."
       >
         {projects.map((project, i) => (
           <ProjectPreview key={project.slug} project={project} flip={i % 2 === 1} />
         ))}
       </SectionHeading>
 
-      {/* ---------- 03 working principles ---------- */}
       <SectionHeading
-        id="principles"
+        id="about"
         index="02"
-        label="How I think"
-        title="A systems-first engineering mindset"
+        label="About"
+        title="A little context"
+        body="I’m studying computer science at Sai University. This site keeps track of what I’ve built and what I’m still figuring out."
       >
-        <div className={styles.principles}>
-          {principles.map((principle, i) => (
-            <div key={principle.title} className="reveal" style={{ transitionDelay: `${i * 60}ms` }}>
-              <div className={styles.principle}>
-                <span className={styles.principleNumber}>0{i + 1}</span>
-                <h3 className={styles.principleTitle}>{principle.title}</h3>
-                <p className={styles.principleBody}>{principle.body}</p>
-              </div>
-            </div>
-          ))}
-        </div>
+        <p className={styles.aboutNote}>
+          Coursework takes up a lot of my time: C, Python, and data structures
+          at the moment. Outside class, I’ve been making web apps and learning
+          Three.js by turning this portfolio into a small world you can walk
+          through.{" "}
+          <a
+            href="https://chandrasekharreddy-basireddy.github.io/portfolio-3d/"
+            className="link link--external"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Take a look
+          </a>
+          . The projects here are at different stages; I’ve marked what’s live
+          and what’s still in progress.
+        </p>
       </SectionHeading>
 
-      {/* ---------- 04 skills ---------- */}
       <SectionHeading
         id="skills"
         index="03"
         label="Skills"
-        title="Tools I use in practice"
-        body="This is organized around what I have actually built with, not just what looks good on a generic technology list."
+        title="Tools I’ve used"
       >
         <div className={styles.skills}>
           {skillGroups.map((group) => (
@@ -153,13 +97,11 @@ export default function HomePage() {
         </div>
       </SectionHeading>
 
-      {/* ---------- 05 timeline ---------- */}
       <SectionHeading
         id="timeline"
         index="04"
         label="Timeline"
-        title="How I got here"
-        body="A direct record of where I am studying and what I have built so far, without adding any artificial polish to the story."
+        title="School and projects"
       >
         <div className={styles.timeline}>
           {journey.map((entry) => (
