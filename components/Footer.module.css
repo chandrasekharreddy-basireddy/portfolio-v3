@@ -18,7 +18,8 @@
 
 .links {
   display: flex;
-  gap: 1.75rem;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.75rem;
   font-size: 0.9rem;
 }
 
@@ -29,6 +30,10 @@
 
 .links a:hover {
   color: var(--accent);
+}
+
+.sectionLink {
+  /* internal anchors sit alongside the external links — same visual weight */
 }
 
 .meta {
