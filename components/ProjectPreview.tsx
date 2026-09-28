@@ -4,7 +4,6 @@ import { BrowserFrame } from "./BrowserFrame";
 import { SurvivalSchoolVisual } from "./visuals/SurvivalSchoolVisual";
 import { SignalLiteVisual } from "./visuals/SignalLiteVisual";
 import { WorldVisual } from "./visuals/WorldVisual";
-import { Reveal } from "./Reveal";
 import styles from "./ProjectPreview.module.css";
 
 function ProjectVisual({ slug }: { slug: string }) {
@@ -37,44 +36,44 @@ type ProjectPreviewProps = {
 export function ProjectPreview({ project, flip }: ProjectPreviewProps) {
   return (
     <article className={`${styles.preview} ${flip ? styles.flipped : ""}`}>
-      <Reveal className={styles.visualCol}>
+      <div className={`reveal ${styles.visualCol}`}>
         <ProjectVisual slug={project.slug} />
-      </Reveal>
+      </div>
 
       <div className={styles.textCol}>
-        <Reveal>
+        <div className="reveal">
           <p className={styles.index}>
             <span className={styles.indexNumber}>{project.index}</span>
             <span className={styles.indexMeta}>{project.year}</span>
           </p>
-        </Reveal>
+        </div>
 
-        <Reveal delay={60}>
+        <div className="reveal" style={{ transitionDelay: "60ms" }}>
           <h3 className={styles.name}>
             <Link href={`/projects/${project.slug}`} className={styles.nameLink}>
               {project.name}
               <span className={styles.nameArrow} aria-hidden="true">→</span>
             </Link>
           </h3>
-        </Reveal>
+        </div>
 
-        <Reveal delay={100}>
+        <div className="reveal" style={{ transitionDelay: "100ms" }}>
           <p className={styles.tagline}>{project.tagline}</p>
-        </Reveal>
+        </div>
 
-        <Reveal delay={140}>
+        <div className="reveal" style={{ transitionDelay: "140ms" }}>
           <p className={styles.summary}>{project.summary}</p>
-        </Reveal>
+        </div>
 
-        <Reveal delay={180}>
+        <div className="reveal" style={{ transitionDelay: "180ms" }}>
           <ul className={styles.stack} aria-label="Technology stack">
             {project.stack.map((tech) => (
               <li key={tech}>{tech}</li>
             ))}
           </ul>
-        </Reveal>
+        </div>
 
-        <Reveal delay={220}>
+        <div className="reveal" style={{ transitionDelay: "220ms" }}>
           <div className={styles.links}>
             <Link
               href={`/projects/${project.slug}`}
@@ -109,7 +108,7 @@ export function ProjectPreview({ project, flip }: ProjectPreviewProps) {
                 </a>
               ))}
           </div>
-        </Reveal>
+        </div>
       </div>
     </article>
   );

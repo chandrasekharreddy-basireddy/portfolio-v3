@@ -274,19 +274,25 @@ button {
   transform: translateX(3px);
 }
 
-/* ---------- reveal (progressive enhancement: inert without JS) ---------- */
+/* ---------- reveal ---------- */
 
-.js .reveal {
+.reveal {
   opacity: 0;
   transform: translateY(14px);
   transition: opacity var(--t-entrance) var(--ease),
     transform var(--t-entrance) var(--ease);
-  transition-delay: var(--reveal-delay, 0ms);
+  animation: revealIn 0.7s var(--ease) forwards;
 }
 
-.js .reveal.is-visible {
-  opacity: 1;
-  transform: none;
+@keyframes revealIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -294,10 +300,11 @@ button {
     scroll-behavior: auto;
   }
 
-  .js .reveal {
+  .reveal {
     opacity: 1;
     transform: none;
     transition: none;
+    animation: none;
   }
 
   *,

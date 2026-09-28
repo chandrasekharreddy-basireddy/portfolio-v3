@@ -1,5 +1,4 @@
 import { ProjectPreview } from "@/components/ProjectPreview";
-import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
 import { site } from "@/content/site";
 import { projects } from "@/content/projects";
@@ -38,22 +37,22 @@ export default function HomePage() {
     <main id="main">
       {/* ---------- 01 hero ---------- */}
       <section className={`shell ${styles.hero}`}>
-        <Reveal>
+        <div className="reveal">
           <p className="meta">
             <span className={styles.heroMetaLine} aria-hidden="true" />
             Computer Science · Sai University · India
           </p>
-        </Reveal>
+        </div>
 
-        <Reveal delay={80}>
+        <div className="reveal" style={{ transitionDelay: "80ms" }}>
           <h1 className={styles.heroTitle}>{site.heroLine}</h1>
-        </Reveal>
+        </div>
 
-        <Reveal delay={160}>
+        <div className="reveal" style={{ transitionDelay: "160ms" }}>
           <p className={styles.heroSub}>{site.heroSub}</p>
-        </Reveal>
+        </div>
 
-        <Reveal delay={220}>
+        <div className="reveal" style={{ transitionDelay: "220ms" }}>
           <dl className={styles.facts}>
             {facts.map((fact) => (
               <div key={fact.label} className={styles.fact}>
@@ -62,9 +61,9 @@ export default function HomePage() {
               </div>
             ))}
           </dl>
-        </Reveal>
+        </div>
 
-        <Reveal delay={280}>
+        <div className="reveal" style={{ transitionDelay: "280ms" }}>
           <div className={styles.heroActions}>
             <a href="#work" className="button button--primary">
               View selected work
@@ -74,7 +73,7 @@ export default function HomePage() {
               Get in touch
             </a>
           </div>
-        </Reveal>
+        </div>
       </section>
 
       {/* ---------- 02 selected work ---------- */}
@@ -99,13 +98,13 @@ export default function HomePage() {
       >
         <div className={styles.principles}>
           {principles.map((principle, i) => (
-            <Reveal key={principle.title} delay={i * 60}>
+            <div key={principle.title} className="reveal" style={{ transitionDelay: `${i * 60}ms` }}>
               <div className={styles.principle}>
                 <span className={styles.principleNumber}>0{i + 1}</span>
                 <h3 className={styles.principleTitle}>{principle.title}</h3>
                 <p className={styles.principleBody}>{principle.body}</p>
               </div>
-            </Reveal>
+            </div>
           ))}
         </div>
       </SectionHeading>
@@ -120,7 +119,7 @@ export default function HomePage() {
       >
         <div className={styles.skills}>
           {skillGroups.map((group) => (
-            <Reveal key={group.label}>
+            <div key={group.label} className="reveal">
               <div className={styles.skillGroup}>
                 <span className={styles.skillGroupLabel}>{group.label}</span>
                 <ul className={styles.skillList}>
@@ -129,7 +128,7 @@ export default function HomePage() {
                   ))}
                 </ul>
               </div>
-            </Reveal>
+            </div>
           ))}
         </div>
       </SectionHeading>
@@ -144,7 +143,7 @@ export default function HomePage() {
       >
         <div className={styles.timeline}>
           {journey.map((entry) => (
-            <Reveal key={`${entry.period}-${entry.title}`}>
+            <div key={`${entry.period}-${entry.title}`} className="reveal">
               <div
                 className={`${styles.timelineEntry} ${
                   entry.kind === "project" ? styles["timelineEntry--project"] : ""
@@ -159,7 +158,7 @@ export default function HomePage() {
                   ) : null}
                 </div>
               </div>
-            </Reveal>
+            </div>
           ))}
         </div>
       </SectionHeading>

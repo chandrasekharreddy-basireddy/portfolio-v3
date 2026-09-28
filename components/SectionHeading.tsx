@@ -1,5 +1,3 @@
-import { Reveal } from "./Reveal";
-
 type SectionHeadingProps = {
   index: string;
   label: string;
@@ -24,21 +22,21 @@ export function SectionHeading({
       id={id}
       className={`section lede-grid ${deep ? "section--deep" : "section--ruled"}`}
     >
-      <Reveal>
+      <div className="reveal">
         <p className="lede-label">
           <em>{index}</em>
           {label}
         </p>
-      </Reveal>
+      </div>
 
       <div>
-        <Reveal delay={60}>
+        <div className="reveal" style={{ transitionDelay: "60ms" }}>
           <h2 className="lede-title">{title}</h2>
-        </Reveal>
+        </div>
         {body ? (
-          <Reveal delay={120}>
+          <div className="reveal" style={{ transitionDelay: "120ms" }}>
             <p className="lede-body">{body}</p>
-          </Reveal>
+          </div>
         ) : null}
         {children}
       </div>
