@@ -1,7 +1,6 @@
 export const site = {
   name: "Chandra Sekhar Reddy Basireddy",
   shortName: "Chandra",
-  headerName: "Chandra Sekhar",
   role: "Computer Science Student",
   university: "Sai University",
   email: "srinivasabasireddy06@gmail.com",
@@ -11,10 +10,11 @@ export const site = {
   siteUrl: "https://chandrasekharreddy-basireddy.github.io/portfolio-v3",
   location: "India",
   availability: "Open to software engineering internships",
-  intro:
-    "I'm a Computer Science student at Sai University. I learn by building — when I want to understand a system, I build a working version of it and let the hard parts teach me.",
-  // Interests pulled from the projects and coursework on this site — kept short on purpose.
-  exploring: ["Backend systems", "Interactive web", "Data structures & algorithms", "Automation tooling"],
+  heroLine: "I build software to understand how systems really work.",
+  heroSub:
+    "I'm a second-year Computer Science student at Sai University. I learn by building working versions of systems rather than stopping at abstractions.",
+  buildNote:
+    "Built with Next.js, TypeScript and hand-written CSS. Deployed on GitHub Pages.",
 } as const;
 
 export type Site = typeof site;
