@@ -1,0 +1,39 @@
+.footer {
+  border-top: 1px solid var(--line);
+  padding-block: 2.5rem;
+}
+
+.inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem 2.5rem;
+}
+
+.name {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.links {
+  display: flex;
+  gap: 1.75rem;
+  font-size: 0.9rem;
+}
+
+.links a {
+  color: var(--ink-soft);
+  transition: color var(--t-micro) var(--ease);
+}
+
+.links a:hover {
+  color: var(--accent);
+}
+
+.meta {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--ink-faint);
+}
