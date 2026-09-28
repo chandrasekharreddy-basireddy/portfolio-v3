@@ -42,20 +42,20 @@ export default function HomePage() {
               <Reveal>
                 <p className="meta">
                   <span className={styles.heroMetaLine} aria-hidden="true" />
-                  Computer Science student · Sai University · India
+                  Computer Science · Sai University · 2024 — Present
                 </p>
               </Reveal>
               <Reveal delay={80}>
                 <h1 className={styles.heroTitle}>
                   I build software to understand how{" "}
-                  <span className={styles.heroTitleAccent}>things actually work.</span>
+                  <span className={styles.heroTitleAccent}>systems really work.</span>
                 </h1>
               </Reveal>
               <Reveal delay={160}>
                 <p className={styles.heroIntro}>
-                  I'm Chandra — a second-year Computer Science student at Sai
-                  University. When I want to know how a system works, I build a
-                  working version of it and let the hard parts teach me.
+                  I'm Chandra — a Computer Science student at Sai University.
+                  When I want to know how a system works, I build a working
+                  version of it and let the hard parts teach me.
                 </p>
               </Reveal>
               <Reveal delay={240}>
@@ -102,10 +102,6 @@ export default function HomePage() {
                 <div>
                   <dt>Studying</dt>
                   <dd>B.Tech Computer Science, Sai University</dd>
-                </div>
-                <div>
-                  <dt>Year</dt>
-                  <dd>Second year</dd>
                 </div>
                 <div>
                   <dt>Focus</dt>
@@ -181,6 +177,15 @@ export default function HomePage() {
               </Reveal>
             ))}
           </div>
+
+          <Reveal delay={120}>
+            <p className={styles.exploring}>
+              <span className={styles.exploringLabel}>
+                Currently exploring
+              </span>
+              {site.exploring.join(" · ")}
+            </p>
+          </Reveal>
         </SectionHeading>
 
         {/* ---------- journey ---------- */}
@@ -222,10 +227,10 @@ export default function HomePage() {
           </Reveal>
           <div className={styles.contact}>
             <Reveal delay={60}>
-              <h2 className={styles.contactHeading}>Let's work together.</h2>
+              <h2 className={styles.contactHeading}>Let's talk.</h2>
             </Reveal>
             <Reveal delay={120}>
-              <p className="lede-body" style={{ marginTop: "1.25rem" }}>
+              <p className={`lede-body ${styles.contactBody}`}>
                 I'm currently studying Computer Science at Sai University and
                 looking for opportunities to work on real software engineering
                 problems. The fastest way to reach me is email — I read
@@ -255,7 +260,7 @@ export default function HomePage() {
                 >
                   LinkedIn
                 </a>
-                <Link href="/work" className="link">
+                <Link href="/#work" className="link">
                   Browse the projects first
                 </Link>
               </div>
