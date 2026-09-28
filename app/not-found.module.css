@@ -1,0 +1,50 @@
+.main {
+  min-height: 70svh;
+  display: grid;
+  align-content: center;
+  padding-block: 7rem 4rem;
+}
+
+.box {
+  max-width: 46ch;
+}
+
+.title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-top: 1rem;
+}
+
+.body {
+  color: var(--ink-soft);
+  margin-top: 1rem;
+}
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  padding: 0.85rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: 1px solid var(--ink);
+  border-radius: var(--r-base);
+  transition: background var(--t-micro) var(--ease),
+    color var(--t-micro) var(--ease);
+}
+
+.back:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.backArrow {
+  transition: transform var(--t-component) var(--ease);
+}
+
+.back:hover .backArrow {
+  transform: translateX(-3px);
+}
