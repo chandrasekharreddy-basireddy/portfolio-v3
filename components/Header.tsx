@@ -6,12 +6,12 @@ import { usePathname } from "next/navigation";
 import { site } from "@/content/site";
 import styles from "./header.module.css";
 
-const sections = ["about", "work", "journey", "contact"] as const;
+const sections = ["work", "principles", "skills", "timeline"] as const;
 const sectionLabels: Record<(typeof sections)[number], string> = {
-  about: "About",
   work: "Work",
-  journey: "Journey",
-  contact: "Contact",
+  principles: "Principles",
+  skills: "Skills",
+  timeline: "Timeline",
 };
 
 export function Header() {
@@ -77,7 +77,7 @@ export function Header() {
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ""}`}>
       <div className={`shell ${styles.inner}`}>
         <Link href="/" className={styles.wordmark} aria-label="Home">
-          {site.headerName}
+          {site.name}
         </Link>
 
         <nav className={styles.nav} aria-label="Primary">
@@ -88,7 +88,6 @@ export function Header() {
               className={`${styles.navLink} ${
                 active === section ? styles.navLinkActive : ""
               }`}
-              aria-current={active === section ? "true" : undefined}
             >
               <span className={styles.navIndex}>
                 0{sections.indexOf(section) + 1}
