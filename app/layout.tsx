@@ -5,6 +5,8 @@ import "@fontsource/instrument-sans/600.css";
 import "@fontsource/ibm-plex-mono/400.css";
 import "@fontsource/ibm-plex-mono/500.css";
 import "@/styles/globals.css";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 import { site } from "@/content/site";
 
 export const metadata: Metadata = {
@@ -14,11 +16,11 @@ export const metadata: Metadata = {
     template: "%s — Chandra Sekhar Reddy Basireddy",
   },
   description:
-    "Computer Science student at Sai University. I build working software to understand how systems actually work — a learning platform, a security-first messaging app and a 3D world.",
+    "Computer Science student at Sai University. I build software to understand how systems really work — a learning platform, a security-first messaging app and a walkable 3D world.",
   openGraph: {
     title: "Chandra Sekhar Reddy Basireddy",
     description:
-      "Computer Science student at Sai University. I build working software to understand how systems actually work.",
+      "Computer Science student at Sai University. I build software to understand how systems really work.",
     url: "/",
     siteName: "Chandra Sekhar Reddy Basireddy",
     type: "website",
@@ -77,7 +79,12 @@ export default function RootLayout({
         />
       </head>
       <body>
+        <a href="#main" className="skip-link">
+          Skip to content
+        </a>
+        <Header />
         {children}
+        <Footer />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
