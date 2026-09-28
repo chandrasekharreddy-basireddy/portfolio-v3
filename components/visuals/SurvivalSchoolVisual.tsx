@@ -1,24 +1,42 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import styles from "./visuals.module.css";
 
+const START_SECONDS = 18 * 60 + 42;
+
+function format(seconds: number) {
+  const m = Math.floor(seconds / 60);
+  const s = seconds % 60;
+  return `${m}:${String(s).padStart(2, "0")}`;
+}
+
+/**
+ * Bespoke miniature of the actual Survival School exam screen. The timer
+ * ticks down for real; the content is a genuine question from the product
+ * domain. Decorative: the facts it shows are duplicated in the text column.
+ */
 export function SurvivalSchoolVisual() {
+  const [secondsLeft, setSecondsLeft] = useState(START_SECONDS);
+
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const id = setInterval(() => {
+      setSecondsLeft((left) => (left > 0 ? left - 1 : 0));
+    }, 1000);
+    return () => clearInterval(id);
+  }, []);
+
   return (
     <>
       <div className={styles.ssHeader}>
         <span className={styles.vLabel}>Mock exam · Physics</span>
         <div className={styles.ssMeta}>
-          <span className={`${styles.vChip} ${styles.vChipAccent}`}>
-            <span
-              style={{
-                display: "inline-block",
-                width: 6,
-                height: 6,
-                borderRadius: "50%",
-                background: "var(--accent)",
-              }}
-            />
-            18:42
+          <span className={`${styles.vChip} ${styles.vChipAccent} ${styles.tnum}`}>
+            <span className={styles.timerDot} aria-hidden="true" />
+            {format(secondsLeft)}
           </span>
-          <span className={styles.vChip}>Q 12 / 30</span>
+          <span className={`${styles.vChip} ${styles.tnum}`}>Q 12 / 30</span>
         </div>
       </div>
 
