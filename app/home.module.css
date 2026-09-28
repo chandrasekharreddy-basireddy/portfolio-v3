@@ -40,7 +40,7 @@
 .heroTitle {
   font-size: clamp(2.5rem, 5.2vw, 4rem);
   font-weight: 500;
-  line-height: 1.06;
+  line-height: 1.1;
   letter-spacing: -0.028em;
   max-width: 16ch;
 }
@@ -77,20 +77,6 @@
 .heroAsideLabel {
   margin-bottom: 0.75rem;
   display: block;
-}
-
-.heroScroll {
-  margin-top: 4rem;
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  color: var(--ink-faint);
-}
-
-.heroScrollLine {
-  width: 1px;
-  height: 2.2rem;
-  background: linear-gradient(var(--line-strong), transparent);
 }
 
 /* ---------- about ---------- */
@@ -284,7 +270,32 @@
   max-width: 60ch;
 }
 
+/* ---------- currently exploring ---------- */
+
+.exploring {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+}
+
+.exploringLabel {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
 /* ---------- contact ---------- */
+
+.contactBody {
+  margin-top: 1.25rem;
+}
 
 .contact {
   padding-bottom: clamp(6rem, 10vw, 9rem);
