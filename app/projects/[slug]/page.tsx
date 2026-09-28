@@ -1,11 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { Reveal } from "@/components/Reveal";
 import { projects, getProject } from "@/content/projects";
-import { site } from "@/content/site";
 import styles from "./project.module.css";
 
 type ProjectPageProps = {
@@ -40,10 +37,8 @@ export default function ProjectPage({ params }: ProjectPageProps) {
   const nextProject = projects[(currentIndex + 1) % projects.length];
 
   return (
-    <>
-      <Header />
-      <main>
-        {/* ---------- project header ---------- */}
+    <main id="main">
+      {/* ---------- project header ---------- */}
         <section className={`shell ${styles.header}`}>
           <Link href="/#work" className={styles.backLink}>
             ← All work
@@ -164,13 +159,13 @@ export default function ProjectPage({ params }: ProjectPageProps) {
           </div>
         </section>
 
-        {/* ---------- challenges & lessons ---------- */}
+        {/* ---------- what broke & lessons ---------- */}
         <section className={`shell section ${styles.duoGrid}`}>
           <Reveal>
             <div>
-              <h2 className={styles.subHeading}>Challenges</h2>
+              <h2 className={styles.subHeading}>What broke</h2>
               <div className={styles.challengeList}>
-                {project.challenges.map((challenge) => (
+                {project.whatBroke.map((challenge) => (
                   <div key={challenge.heading} className={styles.challenge}>
                     <h3 className={styles.noteHeading}>{challenge.heading}</h3>
                     <p className={styles.noteBody}>{challenge.body}</p>
@@ -206,26 +201,6 @@ export default function ProjectPage({ params }: ProjectPageProps) {
             </Link>
           </Reveal>
         </section>
-
-        {/* ---------- contact footer band ---------- */}
-        <section className={`shell section ${styles.contactBand}`}>
-          <Reveal>
-            <h2 className={styles.contactHeading}>Building something similar?</h2>
-          </Reveal>
-          <Reveal delay={80}>
-            <p className={styles.contactBody}>
-              I'd be glad to talk about any of this — the details, the
-              trade-offs, or the parts that didn't work.
-            </p>
-          </Reveal>
-          <Reveal delay={140}>
-            <a href={`mailto:${site.email}`} className={styles.contactEmail}>
-              {site.email}
-            </a>
-          </Reveal>
-        </section>
-      </main>
-      <Footer />
-    </>
+    </main>
   );
 }
