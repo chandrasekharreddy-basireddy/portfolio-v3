@@ -89,6 +89,28 @@ button {
   outline-offset: 3px;
 }
 
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 100;
+  padding: 0.6rem 1rem;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  border-radius: var(--r-base);
+  transition: top var(--t-micro) var(--ease);
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+.tnum {
+  font-variant-numeric: tabular-nums;
+}
+
 /* ---------- shared layout primitives ---------- */
 
 .shell {
