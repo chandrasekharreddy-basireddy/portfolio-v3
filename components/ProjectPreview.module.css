@@ -1,0 +1,143 @@
+.preview {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: center;
+  padding-block: clamp(2.75rem, 6vw, 4.5rem);
+  border-top: 1px solid var(--line);
+}
+
+.preview:first-child {
+  border-top: none;
+  padding-top: clamp(2rem, 4vw, 3rem);
+}
+
+.visualCol {
+  transition: transform var(--t-component) var(--ease);
+}
+
+.visualCol :global(.frame) {
+  transition: box-shadow var(--t-component) var(--ease),
+    border-color var(--t-component) var(--ease);
+}
+
+.preview:hover .visualCol :global(.frame) {
+  border-color: var(--ink-faint);
+  box-shadow: 0 1px 2px rgba(25, 23, 19, 0.05),
+    0 16px 40px rgba(25, 23, 19, 0.09);
+}
+
+.flipped .visualCol {
+  order: 2;
+}
+
+.flipped .textCol {
+  order: 1;
+}
+
+.worldFigure {
+  margin: 0;
+}
+
+.index {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 1.1rem;
+}
+
+.indexNumber {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+}
+
+.indexMeta {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  color: var(--ink-faint);
+}
+
+.name {
+  font-size: clamp(1.6rem, 2.8vw, 2.1rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.12;
+}
+
+.nameLink {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.nameArrow {
+  font-size: 0.72em;
+  color: var(--ink-faint);
+  transition: transform var(--t-component) var(--ease), color var(--t-micro) var(--ease);
+}
+
+.nameLink:hover .nameArrow {
+  transform: translateX(4px);
+  color: var(--accent);
+}
+
+.tagline {
+  margin-top: 0.4rem;
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.summary {
+  margin-top: 0.9rem;
+  font-size: 0.98rem;
+  color: var(--ink-soft);
+  max-width: 58ch;
+}
+
+.stack {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 1.4rem;
+  margin-top: 1.4rem;
+}
+
+.stack li {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+}
+
+.stack li::before {
+  content: "+ ";
+  color: var(--ink-faint);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.8rem;
+  margin-top: 1.6rem;
+  font-size: 0.92rem;
+}
+
+@media (max-width: 860px) {
+  .preview,
+  .flipped {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.75rem;
+  }
+
+  .flipped .visualCol {
+    order: 0;
+  }
+
+  .flipped .textCol {
+    order: 0;
+  }
+}
