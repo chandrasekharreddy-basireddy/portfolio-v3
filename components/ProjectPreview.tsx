@@ -23,7 +23,7 @@ function ProjectVisual({ slug }: { slug: string }) {
     );
   }
   return (
-    <figure className={styles.worldFigure}>
+    <figure className={styles.worldFigure} aria-hidden="true">
       <WorldVisual />
     </figure>
   );
