@@ -9,8 +9,8 @@ type BrowserFrameProps = {
 
 export function BrowserFrame({ url, children, className }: BrowserFrameProps) {
   return (
-    <figure className={`${styles.frame} ${className ?? ""}`}>
-      <div className={styles.chrome} aria-hidden="true">
+    <figure className={`${styles.frame} ${className ?? ""}`} aria-hidden="true">
+      <div className={styles.chrome}>
         <span className={styles.chromeDots} />
         <span className={styles.chromeUrl}>{url}</span>
       </div>
