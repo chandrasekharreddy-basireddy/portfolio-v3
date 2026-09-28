@@ -88,6 +88,7 @@ export function Header() {
               className={`${styles.navLink} ${
                 active === section ? styles.navLinkActive : ""
               }`}
+              aria-current={active === section ? "page" : undefined}
             >
               <span className={styles.navIndex}>
                 0{sections.indexOf(section) + 1}
@@ -99,7 +100,7 @@ export function Header() {
 
         <a href={`mailto:${site.email}`} className={styles.status}>
           <span className={styles.statusDot} aria-hidden="true" />
-          Open to internships
+          Building systems
         </a>
 
         <button
@@ -131,6 +132,7 @@ export function Header() {
               href={`/#${section}`}
               className={styles.mobileNavLink}
               onClick={() => setMenuOpen(false)}
+              aria-current={active === section ? "page" : undefined}
             >
               <span className={styles.mobileNavIndex}>0{i + 1}</span>
               {sectionLabels[section]}

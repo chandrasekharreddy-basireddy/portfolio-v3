@@ -1,5 +1,6 @@
 .footer {
   border-top: 1px solid var(--line);
+  background: rgba(239, 237, 230, 0.5);
 }
 
 .contact {
@@ -38,8 +39,12 @@
   font-family: var(--font-mono);
   font-size: clamp(1rem, 2.4vw, 1.35rem);
   border-bottom: 1.5px solid var(--line-strong);
-  transition: color var(--t-micro) var(--ease), border-color var(--t-micro) var(--ease);
+  transition: color var(--t-micro) var(--ease), border-color var(--t-micro) var(--ease), transform var(--t-micro) var(--ease);
   word-break: break-all;
+}
+
+.email:hover {
+  transform: translateY(-1px);
 }
 
 .email:hover {

@@ -9,27 +9,33 @@ import styles from "./home.module.css";
 const principles = [
   {
     title: "Build to understand",
-    body: "Reading about a system is a start. Building a working version of it is where the actual learning happens, and every project on this page started as a question.",
+    body: "I learn by making systems real. The value is not in the idea alone, but in the decisions that survive runtime, scale, and actual user behavior.",
   },
   {
     title: "Question the abstraction",
-    body: "Frameworks are convenient until they're the reason something breaks. I'd rather know what the library is doing underneath than be surprised by it later.",
+    body: "Libraries and frameworks are useful only when I understand what they hide. I want the system underneath to be legible, not mysterious.",
   },
   {
     title: "Keep the interface honest",
-    body: "Good engineering should be understandable to the person using it. Clear states, predictable behaviour, nothing that quietly fails.",
+    body: "A good interface should be clear and predictable. If the state model is confusing, the product will fail before the user gets to the real problem.",
   },
   {
-    title: "Fix what breaks",
-    body: "Testing and iteration are part of building, not a phase after it. The bugs that survive are the ones nobody went looking for.",
+    title: "Iterate on what breaks",
+    body: "I care about failure modes, edge cases, and revision. The best systems are not the ones that never break — they are the ones that teach you how to fix them well.",
   },
 ];
 
 const facts = [
   { label: "Studying", value: "B.Tech Computer Science, Sai University" },
-  { label: "Focus", value: "Full-stack · Backend · DSA" },
+  { label: "Focus", value: "Backend systems · product thinking · interfaces" },
   { label: "Based in", value: "India" },
-  { label: "Looking for", value: "A software engineering internship" },
+  { label: "Interested in", value: "System design · reliability · thoughtful UX" },
+];
+
+const focusAreas = [
+  "backend systems and data flow",
+  "real-time product behavior",
+  "thoughtful interfaces and product tradeoffs",
 ];
 
 export default function HomePage() {
@@ -50,6 +56,9 @@ export default function HomePage() {
 
         <div className="reveal" style={{ transitionDelay: "160ms" }}>
           <p className={styles.heroSub}>{site.heroSub}</p>
+          <p className={styles.leadSentence}>
+            I care about software that stays honest under pressure: clear interfaces, reliable systems, and decisions that still feel right after the demo is over.
+          </p>
         </div>
 
         <div className="reveal" style={{ transitionDelay: "220ms" }}>
@@ -64,6 +73,17 @@ export default function HomePage() {
         </div>
 
         <div className="reveal" style={{ transitionDelay: "280ms" }}>
+          <div className={styles.focusWrap}>
+            <p className={styles.focusLabel}>Current focus</p>
+            <ul className={styles.focusList}>
+              {focusAreas.map((area) => (
+                <li key={area} className={styles.focusItem}>{area}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <div className="reveal" style={{ transitionDelay: "340ms" }}>
           <div className={styles.heroActions}>
             <a href="#work" className="button button--primary">
               View selected work
@@ -81,8 +101,8 @@ export default function HomePage() {
         id="work"
         index="01"
         label="Selected work"
-        title="Three projects, three questions"
-        body="Each of these started as something I wanted to understand. How exam platforms score fairly, how chat apps stay secure, how 3D worlds hold a frame budget. Each one links to a full case study."
+        title="Three projects, three real questions"
+        body="Each project started from a practical problem: how exam systems stay fair, how chat apps stay secure under pressure, and how real-time interfaces keep performance honest."
       >
         {projects.map((project, i) => (
           <ProjectPreview key={project.slug} project={project} flip={i % 2 === 1} />
@@ -93,8 +113,8 @@ export default function HomePage() {
       <SectionHeading
         id="principles"
         index="02"
-        label="How I work"
-        title="Four working principles"
+        label="How I think"
+        title="A systems-first engineering mindset"
       >
         <div className={styles.principles}>
           {principles.map((principle, i) => (
@@ -114,8 +134,8 @@ export default function HomePage() {
         id="skills"
         index="03"
         label="Skills"
-        title="What I work with"
-        body="Grouped by where I've actually used each of these, in the projects above, in coursework, or both."
+        title="Tools I use in practice"
+        body="This is organized around what I have actually built with, not just what looks good on a generic technology list."
       >
         <div className={styles.skills}>
           {skillGroups.map((group) => (
@@ -139,7 +159,7 @@ export default function HomePage() {
         index="04"
         label="Timeline"
         title="How I got here"
-        body="No invented work history. This is an honest record of where I'm studying and what I've built along the way."
+        body="A direct record of where I am studying and what I have built so far, without adding any artificial polish to the story."
       >
         <div className={styles.timeline}>
           {journey.map((entry) => (

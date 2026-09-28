@@ -4,14 +4,17 @@
   left: 0;
   right: 0;
   z-index: 100;
-  background: color-mix(in srgb, var(--paper) 92%, transparent);
+  background: rgba(247, 246, 242, 0.82);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid transparent;
   transition: border-color var(--t-component) var(--ease),
-    background var(--t-component) var(--ease);
+    background var(--t-component) var(--ease), box-shadow var(--t-component) var(--ease);
 }
 
 .header.scrolled {
   border-bottom-color: var(--line);
+  box-shadow: 0 8px 24px rgba(25, 23, 19, 0.04);
 }
 
 .inner {
@@ -53,7 +56,11 @@
   font-size: 0.92rem;
   font-weight: 500;
   color: var(--ink-soft);
-  transition: color var(--t-micro) var(--ease);
+  transition: color var(--t-micro) var(--ease), transform var(--t-micro) var(--ease);
+}
+
+.navLink:hover {
+  transform: translateY(-1px);
 }
 
 .navLink:hover,
@@ -84,7 +91,11 @@
   text-transform: uppercase;
   color: var(--ink-soft);
   white-space: nowrap;
-  transition: color var(--t-micro) var(--ease);
+  transition: color var(--t-micro) var(--ease), transform var(--t-micro) var(--ease);
+}
+
+.status:hover {
+  transform: translateY(-1px);
 }
 
 .status:hover {

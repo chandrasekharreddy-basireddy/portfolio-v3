@@ -3,8 +3,17 @@
   grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
   gap: clamp(2rem, 5vw, 4.5rem);
   align-items: center;
-  padding-block: clamp(2.75rem, 6vw, 4.5rem);
+  padding: clamp(2.1rem, 4vw, 3rem);
+  border: 1px solid transparent;
   border-top: 1px solid var(--line);
+  border-radius: 0;
+  transition: border-color var(--t-component) var(--ease),
+    box-shadow var(--t-component) var(--ease), transform var(--t-component) var(--ease);
+}
+
+.preview:hover {
+  border-color: var(--line-strong);
+  box-shadow: 0 16px 40px rgba(25, 23, 19, 0.04);
 }
 
 .preview:first-child {
@@ -16,9 +25,13 @@
   transition: transform var(--t-component) var(--ease);
 }
 
+.preview:hover .visualCol {
+  transform: translateY(-2px);
+}
+
 .visualCol :global(.frame) {
   transition: box-shadow var(--t-component) var(--ease),
-    border-color var(--t-component) var(--ease);
+    border-color var(--t-component) var(--ease), transform var(--t-component) var(--ease);
 }
 
 .preview:hover .visualCol :global(.frame) {

@@ -70,14 +70,6 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <head>
-        {/* Enables reveal transitions only when JS runs — content is never hidden without it. */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: "document.documentElement.classList.add('js')",
-          }}
-        />
-      </head>
       <body>
         <a href="#main" className="skip-link">
           Skip to content

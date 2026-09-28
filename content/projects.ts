@@ -31,7 +31,7 @@ export const projects: Project[] = [
     name: "Survival School",
     tagline: "A learning and assessment platform for university courses",
     summary:
-      "Timed MCQ exams with server-authoritative scoring, QR-verifiable certificates, points, badges, timetables and real-time chat. Built as a full-stack web app for university exam practice.",
+      "A full-stack exam platform with server-authoritative scoring, verifiable certificates, progress tracking, and collaboration features built around real course workflows.",
     status: "Live",
     stack: ["FastAPI", "PostgreSQL", "Redis", "Next.js"],
     links: [
@@ -39,11 +39,11 @@ export const projects: Project[] = [
       { label: "View on GitHub", url: "https://github.com/chandrasekharreddy-basireddy/survivalschool", kind: "source" },
     ],
     overview:
-      "Survival School is a web platform for running MCQ-driven practice and assessment. Timed exams, a scoring system, certificates, and the features a course actually needs around them: schedules, points, badges and chat. It runs live today, and it is the project where I learned most of what I know about building a real full-stack application.",
+      "Survival School is a full-stack assessment platform designed around the real workflows of courses: timed exams, verifiable results, learner progress, and communication. It is one of the clearest examples of how I translate product requirements into working systems.",
     problem:
-      "Exam practice at university is repetitive and disconnected. Question banks live in one place, timers exist nowhere, and results come back on paper. Practising under real exam conditions needs a clock, an enforced submission, and a score you can trust. I wanted one place where a course could set timed MCQ papers and students could rehearse them properly.",
+      "University exam practice was fragmented and often disconnected from the actual conditions students needed to prepare under. Timers, submission rules, and trust in results were missing, so practice had little value beyond repetition. I wanted a system where assessment felt real and reliable.",
     approach:
-      "I built it as a product rather than a script: a FastAPI backend, PostgreSQL as the source of truth, Redis for the real-time paths, and a Next.js frontend. One principle held throughout. The server owns every number. Scores are computed server-side at submission; the client sends answers, never marks.",
+      "I built the product around a single system rule: the server owns the score. With FastAPI, PostgreSQL, Redis, and Next.js, I focused on making the app behave like a dependable assessment platform instead of a mockup with a nice interface.",
     implementation: [
       {
         heading: "Server-authoritative scoring",
@@ -99,18 +99,18 @@ export const projects: Project[] = [
     name: "Signal-Lite",
     tagline: "A security-first real-time messaging platform",
     summary:
-      "A chat platform built the careful way. Phone/OTP login, rotating refresh tokens, server-side authorization on every resource, and WebSocket fan-out over Redis. Docker Compose infrastructure, with a CI-enforced policy of no AI features in the product surface.",
+      "A security-first messaging app that treats auth, authorization, and realtime delivery as core product requirements rather than afterthoughts.",
     status: "In development",
     stack: ["FastAPI", "PostgreSQL", "Redis", "Next.js", "Docker"],
     links: [
       { label: "View on GitHub", url: "https://github.com/chandrasekharreddy-basireddy/Runnerup--chat", kind: "source" },
     ],
     overview:
-      "Signal-Lite started as a simple question: how do chat applications actually work? Building the answer turned into a systematic project where security is the primary feature, not something added at the end. The backend runs FastAPI with async SQLAlchemy, PostgreSQL as the durable store, Redis for pub/sub and rate limiting, and private object storage for uploads. The frontend is Next.js with TypeScript and Tailwind.",
+      "Signal-Lite was built around a simple principle: in real-time systems, security cannot be treated as an afterthought. The project models the actual mechanics of chat systems — authentication, refresh flow, message delivery, and authorization — instead of relying on assumptions.",
     problem:
-      "Chat looks like the simplest app imaginable until you start asking real questions. What happens when a token is stolen? When a message races a reconnect? When a client asks for a conversation it shouldn't see? I wanted to build the version of a chat app where those questions all have explicit answers, and to understand each mechanism by implementing it rather than trusting a framework to do it quietly.",
+      "Messaging apps feel simple until the real edge cases appear: stolen tokens, reconnect races, unauthorized conversation access, and auth flows that break under load. I wanted to build the version of chat where those failure modes are designed for deliberately, not ignored.",
     approach:
-      "Every mechanism was implemented deliberately, from first principles where it mattered. How sessions are issued, how refresh tokens rotate, how a WebSocket connection is authorised, how a message becomes durable. The guiding rule is that no route trusts a client-supplied identity, and it is enforced at the API layer rather than by convention in the frontend.",
+      "I implemented the core mechanisms from first principles: token lifecycle, refresh rotation, WebSocket authorization, message durability, and membership checks. The rule was consistent across the app: the server validates every identity and permission boundary, even when the frontend looks trusted.",
     implementation: [
       {
         heading: "Phone/OTP authentication",
@@ -182,7 +182,7 @@ export const projects: Project[] = [
     name: "Chandra's World",
     tagline: "A 3D portfolio you can walk through",
     summary:
-      "A real-time Three.js world: a guided trail from a mountain camp to a final viewpoint, with a full day/night cycle, four seasons, weather, wildlife, achievements, and a headless CI harness that walks the entire world on every push.",
+      "A browser-based 3D portfolio world that explores real-time rendering, interactive state, performance budgets, and testable product experiences in one cohesive build.",
     status: "Live",
     stack: ["Three.js", "JavaScript", "GitHub Actions"],
     links: [
@@ -190,11 +190,11 @@ export const projects: Project[] = [
       { label: "View on GitHub", url: "https://github.com/chandrasekharreddy-basireddy/portfolio-3d", kind: "source" },
     ],
     overview:
-      "Instead of another scrolling page, I turned my portfolio into a small explorable 3D world built with Three.js. A rigged character walks a trail of about seventy metres from a mountain camp down to a final viewpoint, passing six information stations that hold the actual portfolio content: about, skills, projects, education, contact.",
+      "Chandra's World is a browser-based 3D portfolio experience designed to explore how interactive systems behave under real performance constraints. It is not just a visual gimmick; it is a way to work through scene composition, animation, persistence, and runtime reliability in one system.",
     problem:
-      "I didn't know how real-time 3D on the web works. Scenes, rigs, animation blending, lighting, the frame budget. Reading about it wasn't going to close that gap, and a portfolio is the one project where the subject is already me. So it became the testbed. Build a world where the content lives inside the environment, and let the engineering problems surface themselves.",
+      "Real-time 3D on the web is full of tradeoffs: scene complexity, animation quality, frame time, state management, and device variability. I wanted to learn the actual mechanics instead of treating 3D as decorative technology, so I built the portfolio itself as the testbed.",
     approach:
-      "The world is the interface. The default experience is a scroll-driven guided walk where stations open their content cards as you reach them. A free-walk mode with WASD, run, jump and an interaction key exists for people who want to explore, and a static fallback page serves the same content without WebGL. Content and engine are separated cleanly: all portfolio data lives in one module that every UI in the world reads from.",
+      "I treated the world as the product surface, not just a visual layer. The experience includes guided movement, free exploration, persistence, and a graceful non-WebGL fallback so the content remains accessible while the technical system remains learning-focused and robust.",
     implementation: [
       {
         heading: "The world",
